@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script src="../socket.io/socket.io.js"></script>
+        <script src="/jquery/jquery-3.5.1.js"></script>
+
+        <h1>Webhooks:</h1><br />
+
+        <ul>
+
+        <script>
+            const socket = io.connect('http://localhost:3000/catch');
+            socket.on('webhook', (data) => {
+                $("ul").append("<li>"+data+"</li>");
+            });
+        </script>
+
+        </ul>
+    </body>
+</html>
